@@ -48,18 +48,18 @@ module.exports = {
             .setCustomId('category')
             .setPlaceholder('Selecione a categoria do seu ticket!')
             .addOptions([{
-                label: 'Opcao 1',
-                value: 'opcao1',
-                emoji: '🪙',
+                label: 'Denuncias',
+                value: 'Denuncias',
+                emoji: '👮',
               },
               {
-                label: 'Opcao 2',
-                value: 'opcao2',
+                label: 'Inatividade',
+                value: 'Inatividade',
                 emoji: '🎮',
               },
               {
-                label: 'Opcao 3',
-                value: 'opcao3',
+                label: 'Corregedoria',
+                value: 'Corregedoria',
                 emoji: '📔',
               },
             ]),
@@ -107,17 +107,17 @@ module.exports = {
                 });
               });
             };
-            if (i.values[0] == 'opcao1') {
+            if (i.values[0] == 'Denuncias') {
               c.edit({
                 parent: client.config.opcaoUm
               });
             };
-            if (i.values[0] == 'opcao2') {
+            if (i.values[0] == 'Inatividade') {
               c.edit({
                 parent: client.config.opcaoDois
               });
             };
-            if (i.values[0] == 'opcao3') {
+            if (i.values[0] == 'Corregedoria') {
               c.edit({
                 parent: client.config.opcaoTres
               });
@@ -258,7 +258,7 @@ module.exports = {
               .setTimestamp();
 
             const embed2 = new client.discord.MessageEmbed()
-              .setAuthor('Logs Ticket', 'https://i.imgur.com/oO5ZSRK.png')
+              .setAuthor('Logs Ticket', client.config.imgLink)
               .setDescription(`📰 Logs do seu ticket\n\n  ID:\`${chan.id}\`: [**Clique aqui para ser direcionado aos logs.**](${urlToPaste})`)
               .setColor('2f3136')
               .setTimestamp();
